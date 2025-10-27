@@ -11,10 +11,10 @@ THIS PROJECT IS CURRENTLY PAUSED AND NOT SET FOR DEPLOYMENT. For now, the Backen
 Built with **React** through **Vite** for a modern, fast development experience. The frontend uses **Axios** to communicate with the backend API endpoints, providing a responsive chat interface for interacting with Google Workspace tools through natural language.
 
 **Key Features:**
-- Real-time chat interface with message history
-- Axios-based API integration for backend communication
-- Vite for lightning-fast builds and hot module replacement
-- **Tailwind CSS** for utility-first styling and responsive design
+Real-time chat interface with message history
+Axios-based API integration for backend communication
+Vite for lightning-fast builds and hot module replacement
+**Tailwind CSS** for utility-first styling and responsive design
 
 ## 🔌 Backend Endpoints
 
@@ -64,20 +64,6 @@ Resets the message buffer to start a fresh conversation.
 
 
 # <span style="color:#cad8d9">MCP Server Details</span>
-
-<table>
-<tr><td width="50%" valign="top">
-
-**Required**
-| Variable | Purpose |
-|----------|---------|
-| `GOOGLE_OAUTH_CLIENT_ID` | OAuth client ID from Google Cloud |
-| `GOOGLE_OAUTH_CLIENT_SECRET` | OAuth client secret |
-| `MCP_ENABLE_OAUTH21` | Set to `true` for OAuth 2.1 support |
-| `WORKSPACE_EXTERNAL_URL` | External URL for reverse proxy setups |
-
-</td></tr>
-</table>
 
 ## 🧰 Available Tools
 
