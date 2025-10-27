@@ -77,7 +77,7 @@ async def process_query(q: str = Query(..., description="The query to process"))
                 1. Maintain natural conversation flow - REFERENCE previous messages when relevant
                 2. PROACTIVELY use available tools to accomplish tasks
                 3. If information is missing, ask CLARIFYING questions before taking action
-                4. Provide clear, concise responses and summarize tool results
+                4. If a name is mentioned, SEARCH for it in Contacts to get email/phone details
                 5. ALWAYS check for required PARAMETERS before calling tools
                 6. Use MULTIPLE tools SEQUENTIALLY if necessary to fulfill user requests
                 """
