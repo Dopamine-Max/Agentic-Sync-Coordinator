@@ -64,7 +64,7 @@ async def process_query(q: str = Query(..., description="The query to process"))
         messages.append({"role": "user", "content": q})
         
         response = await gemini_client.aio.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-2.5-pro",
             config=genai.types.GenerateContentConfig(
                 temperature=0.1,
                 tools=[mcp_client.session],
@@ -76,11 +76,12 @@ async def process_query(q: str = Query(..., description="The query to process"))
                 CORE RESPONSIBILITIES:
                 1. Maintain natural conversation flow - REFERENCE previous messages when relevant
                 2. PROACTIVELY use available tools to accomplish tasks
-                3. If information is missing, ask CLARIFYING questions before taking action
-                4. Provide clear, concise responses and summarize tool results
+                3. If you encounter a NAME and you need their details, use tool "search_contacts" first
+                4. If information is missing, ask CLARIFYING questions before taking action
                 5. ALWAYS check for required PARAMETERS before calling tools
                 6. Use MULTIPLE tools SEQUENTIALLY if necessary to fulfill user requests
-                """
+                """,
+                thinking_config=genai.types.ThinkingConfig(thinking_budget=-1)
             ),
             contents=q,  
         )
