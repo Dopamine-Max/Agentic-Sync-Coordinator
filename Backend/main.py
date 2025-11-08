@@ -58,7 +58,6 @@ async def get_messages():
 @app.get("/query")
 async def process_query(q: str = Query(..., description="The query to process")):
     async with mcp_client:
-        await mcp_client.ping()
         
         # Store user message properly
         messages.append({"role": "user", "content": q})
